@@ -1,0 +1,650 @@
+* {
+  box-sizing: border-box;
+}
+main,
+header {
+  padding: 0 3%;
+}
+/*********** FONTS - TITLES - GENERIC ELEMENT ***********/
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  font-family: "Raleway", sans-serif;
+  margin: auto;
+  font-size: 100%;
+  max-width: 1900px;
+}
+.grey {
+  color: rgb(98, 96, 96);
+  font-weight: 200;
+}
+
+a {
+  text-decoration: none;
+}
+strong {
+  color: black;
+}
+
+h1 {
+  font-size: 1.3rem;
+}
+
+h1,
+h2,
+h3,
+.lodgingMoreContent {
+  font-weight: 500;
+  color: black;
+}
+
+/* Desktop */
+@media screen and (min-width: 992px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+  h2 {
+    font-size: 1.1em;
+  }
+  .activityCardbody h2,
+  .lodgingCardBody h2 {
+    font-size: 0.8em;
+    margin: 0;
+  }
+  .lodgingCardBody p {
+    font-size: 0.8em;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* tablette and mobile */
+@media screen and (max-width: 991px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
+/***********  ICONS ***********/
+.blue {
+  color: #0065fc;
+}
+.grey2 {
+  color: #a8a3a3;
+}
+.searchBarIcon {
+  background-color: #f2f2f2;
+  margin: 15px;
+}
+
+.filtersResultIcon,
+.filtersIcons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.filtersIcons {
+  width: 40px;
+  height: 40px;
+  background-color: #deebff;
+  margin: -4px;
+}
+
+.filtersResultIcon {
+  min-width: 20px;
+  min-height: 20px;
+  border: grey solid 1px;
+  margin-right: 20px;
+}
+/***********  ANIMATION ***********/
+
+.filtersElement:hover,
+.lodgingCard:hover,
+.lodgingCardPopular:hover,
+.activityCard:hover {
+  box-shadow: 0 6px 14px 0 rgba(0, 0, 0, 0.2);
+}
+
+/*********** HEADER *********/
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3%;
+  margin-bottom: 20px;
+}
+#header img {
+  width: 100px;
+}
+#header nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+#header nav a {
+  padding: 20px 30px;
+}
+
+#header nav a:hover {
+  border-top: #0065fc solid;
+  color: #0065fc;
+}
+
+/* mobile */
+@media screen and (max-width: 768px) {
+  #header {
+    flex-direction: column;
+    padding: 0;
+  }
+  #header nav {
+    width: 100%;
+  }
+
+  #header nav a {
+    width: 50%;
+    border-bottom: #f2f2f2 solid;
+    text-align: center;
+  }
+  #header nav a:hover {
+    border-bottom: #0065fc solid;
+    border-top: none;
+  }
+}
+/*********** MAIN - SEARCHBAR ***********/
+
+.searchBar {
+  display: inline-flex;
+  padding: 0px;
+  margin-top: 15px;
+  background-color: #f2f2f2;
+  border-radius: 15px;
+  margin-bottom: 40px;
+}
+
+.searchBarLocation {
+  border-left: none;
+  border-right: none;
+  border-top: #f2f2f2 1px solid;
+  border-bottom: #f2f2f2 1px solid;
+  padding: 10px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.searchBarButton {
+  background-color: #0065fc;
+  margin: 0;
+  padding: 10px;
+  color: white;
+  border-radius: 0 15px 15px 0;
+  font-weight: 500;
+  border: none;
+}
+.searchBarButtonMobile {
+  display: none;
+  background-color: #0065fc;
+  margin: 0;
+  padding: 10px;
+  color: white;
+  border-radius: 0 15px 15px 0;
+  border: none;
+}
+
+/* mobile */
+@media screen and (max-width: 768px) {
+  .searchBarButton {
+    display: none;
+  }
+  .searchBarButtonMobile {
+    display: inherit;
+    justify-content: center;
+    margin-left: -10px;
+    color: white;
+    border-radius: 15px 15px 15px 15px;
+    border: none;
+    align-items: center;
+    width: 47px;
+    height: 47px;
+  }
+  .searchBar {
+    width: 100%;
+  }
+  .searchBar input {
+    flex: 1;
+  }
+}
+
+/*********** MAIN - FILTERS ***********/
+.filters {
+  display: flex;
+  align-items: center;
+}
+.filtersTitle {
+  padding: 0px;
+  margin: 0px;
+}
+
+.filtersElement {
+  align-items: center;
+  display: flex;
+  margin: 0 20px 0 30px;
+  border-radius: 25px;
+  border: #cac5c5 solid 1.5px;
+  padding: 2px;
+}
+
+.filtersName {
+  margin: 0 15px 0 15px;
+}
+
+.filtersElementResult {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 20px 0;
+}
+
+/* mobile */
+@media screen and (max-width: 991px) {
+  .filters {
+    flex-wrap: wrap;
+  }
+
+  .filtersTitle {
+    width: 100%;
+    text-align: start;
+    margin-bottom: 10px;
+  }
+
+  .filtersElement {
+    margin: 0 20px 20px 0px;
+  }
+}
+
+/*********** MAIN - LODGING ***********/
+#lodging {
+  display: flex;
+  max-height: 580px;
+}
+
+/* style container */
+.lodgingContainer,
+.popularContainer {
+  border-radius: 15px;
+  background-color: #f2f2f2;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+}
+/* sizing container and flex */
+.popularContainer {
+  width: 34%;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+.lodgingContainer {
+  width: 64%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: start;
+}
+
+/* Card style and sizing */
+
+.lodgingCard,
+.lodgingCardPopular {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border-radius: 25px;
+  padding: 4px;
+  margin: 8px;
+}
+.lodgingCard {
+  width: 30%;
+  height: 38%;
+}
+.lodgingCardPopular {
+  width: 95%;
+  height: 25%;
+}
+
+.popular {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+/* Card  picture*/
+.lodgingPicture {
+  height: calc(100% - 90px);
+}
+
+.lodgingPicture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 25px 25px 0 0;
+}
+
+.popularPicture {
+  width: 40%;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.popularPicture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 25px 0 0 25px;
+}
+
+/* card body */
+.lodgingCardBody {
+  padding: 5px;
+  line-height: 20px;
+  position: relative;
+}
+
+.popularContainer span {
+  position: absolute;
+  top: 80px;
+}
+
+/* Logdging more cotent and titles */
+.popularContainer h1,
+.lodgingContainer h1 {
+  margin: 20px 0 10px 0;
+}
+.lodgingMoreContent {
+  padding-left: 20px;
+  width: 100%;
+}
+
+.lodgingMoreContent h2 {
+  margin: 0;
+}
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  margin: 20px;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  text-align: start;
+}
+
+.lodgingContainer h1 {
+  padding-left: 18px;
+  margin: 20px;
+  width: 100%;
+}
+
+.lodgingPopularHeader {
+  width: 100%;
+  padding: 0 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* tablette  and mobile */
+@media screen and (max-width: 991px) {
+  #lodging {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: none;
+    margin: 0px -25px;
+  }
+  /* container */
+  .lodgingContainer,
+  .popularContainer {
+    border-radius: unset;
+    margin: 0px;
+    padding: 30px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .lodgingContainer {
+    order: 2;
+    width: 100%;
+    flex-wrap: unset;
+    background-color: transparent;
+  }
+
+  .popularContainer {
+    background-color: #f2f2f2;
+    order: 1;
+  }
+
+  /* card */
+  .lodgingCard {
+    width: 98%;
+    height: 240px;
+    margin: 10px;
+  }
+  .lodgingCardPopular {
+    width: 98%;
+    height: 160px;
+    margin: 10px;
+  }
+  /* titles */
+  .lodgingPopularHeader {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    align-items: center;
+  }
+  /* picture */
+  .lodgingPicture {
+    height: calc(100% - 90px);
+  }
+  /* body */
+  .lodgingCardBody {
+    padding: 10px;
+    line-height: 15px;
+  }
+
+  .lodgingCardBody h2 {
+    margin-top: 0px;
+  }
+
+  .popularContainer span {
+    position: absolute;
+    top: 120px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 991px) {
+  .lodgingCard {
+    width: 45%;
+    height: 240px;
+  }
+
+  .lodgingContainer {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+
+/*********** MAIN - ACTIVITY ***********/
+.activityLayout {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: space-between;
+  justify-content: space-between;
+  max-width: 100%;
+  height: 600px;
+  margin-bottom: 40px;
+}
+
+.activityCard {
+  width: 22%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.activityCardbody {
+  padding: 20px;
+}
+.activityCardPicture img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 25px 25px 0 0;
+}
+
+.activityCardPicture {
+  height: calc(100% - 60px);
+}
+
+/* Re-order */
+
+.port {
+  order: 1;
+  height: 100%;
+}
+
+.pomegues {
+  order: 2;
+  height: 50%;
+}
+
+.frioul {
+  order: 2;
+  height: 38%;
+}
+
+.calanques {
+  order: 3;
+  height: 100%;
+}
+
+.longchamp {
+  order: 4;
+  height: 38%;
+}
+
+.garde {
+  order: 4;
+  height: 50%;
+}
+
+/* break */
+.break1,
+.break2,
+.break3 {
+  flex-basis: 100%;
+  width: 0;
+  border: 1px solid #ddd;
+  margin: 0;
+  content: "";
+  padding: 0;
+  display: none;
+}
+.break1 {
+  order: 1;
+}
+.break2 {
+  order: 2;
+}
+.break3 {
+  order: 3;
+}
+
+@media screen and (max-width: 768px) {
+  .activityLayout {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-flow: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .activityCard {
+    width: 100%;
+    height: 200px;
+  }
+  .activityCardPicture {
+    height: calc(100% - 60px);
+  }
+  .activityCardbody {
+    padding: 0 0 0 20px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 991px) {
+  .activityLayout {
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-flow: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .activityCard {
+    width: 45%;
+    height: 200px;
+  }
+  .activityCardbody {
+    padding: 0 0 0 20px;
+  }
+}
+/*********** FOOTER ***********/
+#footer {
+  background-color: #f2f2f2;
+  margin: 0px;
+}
+.footerContainer {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #f2f2f2;
+  width: 100%;
+  min-height: 180px;
+  margin: auto;
+}
+
+.footerContainer ul {
+  padding-left: 0;
+  line-height: 30px;
+  list-style: none;
+  margin-right: 100px;
+}
+.footerContainer ul li a {
+  color: rgb(98, 96, 96);
+  font-weight: 300;
+}
+#activity h1 {
+  margin-left: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .footerContainer div {
+    width: 100%;
+  }
+  .footerContainer {
+    flex-direction: column;
+  }
+}
